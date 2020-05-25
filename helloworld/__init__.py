@@ -18,19 +18,20 @@ class Tesztolok:
 
     def paths(self):
         for asd in self.pathz.iterdir():
-            if (os.path.isdir(asd) if self.izfolder else True) and (self.lofilter in asd.name if self.lofilter is not None else True):
+            if (os.path.isdir(asd) if self.izfolder else True) and (
+            self.lofilter in asd.name if self.lofilter is not None else True):
                 print(asd.name)
 
-lopett="e:/"
-filtez="asd"
+
+lopett = "e:/"
+filtez = "asd"
 
 leclass = Tesztolok(lopett, filtez, False)
 leclass.paths()
 
 for currentpath, folders, files in os.walk(lopett):
-    #folders[:] = [d for d in folders if "ash" in d]
+    # folders[:] = [d for d in folders if "ash" in d]
     for file in folders:
         # print(os.path.join(currentpath, file))
         if filtez in file:
             print(file)
-
